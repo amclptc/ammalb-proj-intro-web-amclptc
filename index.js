@@ -67,9 +67,9 @@ const ganhouGrammy = (disco) => {
         alert(`O item não foi adicionado! ${disco.nome} não ganhou o Grammy!`)
     }
 }
-ganhouGrammy(disco1)
-ganhouGrammy(disco2)
-ganhouGrammy(disco3)
+// ganhouGrammy(disco1)
+// ganhouGrammy(disco2)
+// ganhouGrammy(disco3)
 
 
 //SEMANA 3:
@@ -90,7 +90,7 @@ const disco4 = {
     grammy: true
 }
 
-ganhouGrammy(disco4)
+//ganhouGrammy(disco4)
 
 
 for(disco of discosGrammy){
@@ -113,15 +113,22 @@ const relatorio = (disco) => {
     console.log(stringRelatorio)
 }
 
-relatorio(disco1)
+// relatorio(disco1)
 
-const pesquisa = (disco, termo) => {
-    if(disco.nome.includes(termo)){
-        return disco
-    }else{
-        alert('Nenhum item foi encontrado!')
-    }
+
+const pesquisa = (arrayObj, string) => {
+    for(let i in arrayObj){
+        if(arrayObj[i].nome.includes(string)){
+            return arrayObj[i]
+        }
+}alert('Nenhum item foi encontrado!')
 }
 
 
+
 // SEMANA 4:
+discos[0].cover = './media/illmatic.jpeg'
+discos[1].cover = './media/reasonabledoubt.jpeg'
+discos[2].cover = './media/theeminemshow.jpeg'
+// console.log(discos)
+
