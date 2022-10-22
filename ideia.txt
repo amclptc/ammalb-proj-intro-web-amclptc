@@ -1,0 +1,17 @@
+[SEMANA 1]
+Discos de rap
+- Título (string):
+- Artista (string):
+- Duração (number):
+- Ano de lançamento (number):
+- Tracklist (múltiplos valores):
+- Grammy? (booleano): 
+
+Disco 1: Illmatic, Nas
+https://en.wikipedia.org/wiki/Illmatic
+
+Disco 2: Reasonable Doubt, Jay-Z
+https://en.wikipedia.org/wiki/Reasonable_Doubt_(album)
+
+Disco 3: The Eminem Show, Eminem
+https://en.wikipedia.org/wiki/The_Eminem_Show
