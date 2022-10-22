@@ -130,5 +130,6 @@ const pesquisa = (arrayObj, string) => {
 discos[0].cover = './media/illmatic.jpeg'
 discos[1].cover = './media/reasonabledoubt.jpeg'
 discos[2].cover = './media/theeminemshow.jpeg'
+discos[3].cover = './media/thecollegedropout.jpeg'
 // console.log(discos)
 
