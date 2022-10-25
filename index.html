@@ -5,73 +5,68 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clássicos do RAP por Andersom Maciel</title>
-    <script src="index.js"></script>
+    <script src="index.js" defer></script>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
+<div class="container">
 <header>
-    <h1><b>Clássicos do RAP por Andersom Maciel</b></h1>
+    <h1><b>Clássicos do RAP</b></h1>
 </header>
 
-    <main>
-        <article class="pesquisa">
+<main>
+    <article class="pesquisa">
+    <form id="input">
             <label for="pesquisa">Pesquisa</label>
             <input type="text" name="input" id="pesquisa">
-            <button type="submit">Pesquisar</button>
+            <button id="pesquisa" onclick="pesquisar(discos, pesquisa)">Pesquisar</button>
+    </form>
         </article>
-        <article class='discos'>
-            <section>
-                <ul>
-                    <div class="container">
-                    <a href="https://en.wikipedia.org/wiki/Illmatic"><h2><b>ILLMATIC</b></h2></a>
-                    <img src="./media/illmatic.jpeg" alt="Illmatic" width="100px" height="100px">
-                    <li id="item1"><b>Artista:</b> Nas</li><br>
-                    <li id="item2"><b>Duração:</b> 39m51s</li><br>
-                    <li id="item3"><b>Ano:</b> 1994</li><br>
+        <article>
+            <section id="cardDiscos">
+                <ul id="illmatic">
+                    <li><a href="https://en.wikipedia.org/wiki/Illmatic"><h2><b>ILLMATIC</b></h2></a></li>
+                    <li><img src="./media/illmatic.jpeg" alt="Illmatic" width="100px" height="100px"></li>
+                    <li id="item1"><b>Artista:</b> Nas</li>
+                    <li id="item2"><b>Duração:</b> 39m51s</li>
+                    <li id="item3"><b>Ano:</b> 1994</li>
                     <li id="item4"><b>Tracklist:</b> 'The Genesis', 'N.Y. State of Mind', 'Lifes a Bitch', 'The World is Yours', 'Halftime', 'Memory Lane', 'One Love', 'One Time 4 Your Mind', 'Represent', 'It Aint Hard to Tell' </li><br>
                     <li id="item5"><b>Ganhou o Grammy?</b> Não</li>
-                    </div>
                 </ul>
             </section>
             <section>
-                <ul>
-                    <div class="container">
-                    <a href='https://en.wikipedia.org/wiki/Reasonable_Doubt_(album)'><h2><b>REASONABLE DOUBT</b></h2></a>
-                    <img src="./media/reasonabledoubt.jpeg" alt="Illmatic" width="100px" height="100px">
-                        <li id="item1"><b>Artista:</b> Jay-Z</li>
-                        <li id="item2"><b>Duração:</b> 55m32s</li>
-                        <li id="item3"><b>Ano:</b> 1996</li>
-                        <li id="item4"><b>Tracklist:</b> 'Cant Knock the Hustle', 'Politics as Usual', 'Brooklyns Finest', 'Dead Presidents II', 'Feelin It', 'DEvils', '22 Twos', 'Can I Live', 'Aint No Nigga', 'Friend or Foe', 'Coming of Age', 'Cashmere Thoughts', 'Bring It On', 'Regrets'</li>
-                        <li id="item5"><b>Ganhou o Grammy?</b> Não</li>
-                    </div>
+                <ul id="reasonabledoubt">
+                    <li><a href='https://en.wikipedia.org/wiki/Reasonable_Doubt_(album)'><h2><b>REASONABLE DOUBT</b></h2></a></li>
+                    <li><img src="./media/reasonabledoubt.jpeg" alt="Illmatic" width="100px" height="100px"></li>
+                    <li id="item1"><b>Artista:</b> Jay-Z</li>
+                    <li id="item2"><b>Duração:</b> 55m32s</li>
+                    <li id="item3"><b>Ano:</b> 1996</li>
+                    <li id="item4"><b>Tracklist:</b> 'Cant Knock the Hustle', 'Politics as Usual', 'Brooklyns Finest', 'Dead Presidents II', 'Feelin It', 'DEvils', '22 Twos', 'Can I Live', 'Aint No Nigga', 'Friend or Foe', 'Coming of Age', 'Cashmere Thoughts', 'Bring It On', 'Regrets'</li>
+                    <li id="item5"><b>Ganhou o Grammy?</b> Não</li>
                 </ul>
             </section>
             <section>
-                <ul>
-                    <div class="container">
-                    <a href="https://en.wikipedia.org/wiki/The_Eminem_Show"><h2><b>THE EMINEM SHOW</b></h2></a>
-                    <img src="./media/theeminemshow.jpeg" alt="Illmatic" width="100px" height="100px">
-                        <li id="item1"><b>Artista:</b> Eminem</li>
-                        <li id="item2"><b>Duração:</b> 77m19s</li>
-                        <li id="item3"><b>Ano:</b> 2002</li>
-                        <li id="item4"><b>Tracklist:</b> 'Curtains Up', 'White America', 'Business', 'Cleanin Out My Closet', 'Square Dance', 'The Kiss', 'Soldier', 'Say Goodbye Hollywood', 'Drips', 'Without Me', 'Paul Rosenberg', 'Sing for the Moment', 'Superman', 'Hailies Song', 'Steve Berman', 'When the Music Stops', 'Say What You Say', 'Till I Collapse', 'My Dads Gone Crazy', 'Curtains Close'</li>
-                        <li id="item5"><b>Ganhou o Grammy?</b> Sim</li>
-                    </div>
+                <ul id="theeminemshow">
+                    <li><a href="https://en.wikipedia.org/wiki/The_Eminem_Show"><h2><b>THE EMINEM SHOW</b></h2></a></li>
+                    <li><img src="./media/theeminemshow.jpeg" alt="Illmatic" width="100px" height="100px"></li>
+                    <li id="item1"><b>Artista:</b> Eminem</li>
+                    <li id="item2"><b>Duração:</b> 77m19s</li>
+                    <li id="item3"><b>Ano:</b> 2002</li>
+                    <li id="item4"><b>Tracklist:</b> 'Curtains Up', 'White America', 'Business', 'Cleanin Out My Closet', 'Square Dance', 'The Kiss', 'Soldier', 'Say Goodbye Hollywood', 'Drips', 'Without Me', 'Paul Rosenberg', 'Sing for the Moment', 'Superman', 'Hailies Song', 'Steve Berman', 'When the Music Stops', 'Say What You Say', 'Till I Collapse', 'My Dads Gone Crazy', 'Curtains Close'</li>
+                    <li id="item5"><b>Ganhou o Grammy?</b> Sim</li>
                 </ul>
             </section>
             <section>
-                <ul>
-                    <div class="container">
-                    <a href="https://en.wikipedia.org/wiki/The_College_Dropout"><h2><b>THE COLLEGE DROPOUT</b></h2></a>
-                    <img src="./media/thecollegedropout.jpeg" alt="The College Dropout" width="100px" height="100px">
-                        <li id="item1"><b>Artista:</b> Kanye West</li>
-                        <li id="item2"><b>Duração:</b> 72m17s</li>
-                        <li id="item3"><b>Ano:</b> 2004</li>
-                        <li id="item4"><b>Tracklist:</b> 'Intro', 'We Dont Care', 'Graduation Day', 'All Falls Down', 'Ill Fly Away', 'Spaceship', 'Jesus Walks', 'Never Let Me Down', 'Get Em High', 'Workout Plan', 'The New Workout Plan', 'Slow Jamz', 'Breathe In Breathe Out', 'School Spirit Skit 1', 'School Spirit', 'School Spirit Skit 2', 'Lil Jimmy Skit', 'Two Words', 'Through the Wire', 'Family Business', 'Last Call'</li>
-                        <li id="item5"><b>Ganhou o Grammy?</b> Sim</li>
+                <ul id="thecollegedropout">
+                    <li><a href="https://en.wikipedia.org/wiki/The_College_Dropout"><h2><b>THE COLLEGE DROPOUT</b></h2></a></li>
+                    <li><img src="./media/thecollegedropout.jpeg" alt="The College Dropout" width="100px" height="100px"></li>
+                    <li id="item1"><b>Artista:</b> Kanye West</li>
+                    <li id="item2"><b>Duração:</b> 72m17s</li>
+                    <li id="item3"><b>Ano:</b> 2004</li>
+                    <li id="item4"><b>Tracklist:</b> 'Intro', 'We Dont Care', 'Graduation Day', 'All Falls Down', 'Ill Fly Away', 'Spaceship', 'Jesus Walks', 'Never Let Me Down', 'Get Em High', 'Workout Plan', 'The New Workout Plan', 'Slow Jamz', 'Breathe In Breathe Out', 'School Spirit Skit 1', 'School Spirit', 'School Spirit Skit 2', 'Lil Jimmy Skit', 'Two Words', 'Through the Wire', 'Family Business', 'Last Call'</li>
+                    <li id="item5"><b>Ganhou o Grammy?</b> Sim</li>
                     </div>
-                    </ul>
+                </ul>
             </section>
         </article>
 </main>
@@ -80,5 +75,6 @@
     <p><b>Por Andersom Maciel</b></p>
     <p><b>Contato: <a href="https://github.com/amclptc">amclptc</b></a></p>
 </footer>
+</div>
 </body>
 </html>

@@ -53,13 +53,11 @@ ul{
     flex-direction: column;
 }
 
-.container{
-    display: grid;
-    grid-template-rows: auto;
-    grid-template-columns: auto;
-    justify-items:center;
+li{
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    grid-row-gap: 10px;
+    padding: 5px;
 }
 
 a{
@@ -76,27 +74,6 @@ img{
     border: solid 5px black;
     grid-row: 2/3;
 }
-
-#item1{
-    grid-row: 3/4;
-}
-
-#item2{
-    grid-row: 4/5;
-}
-
-#item3{
-    grid-row: 5/6;
-}
-
-#item4{
-    grid-row: 6/7;
-}
-
-#item5{
-    grid-row: 7/8;
-}
-
 
 footer{
     background-color: red;
