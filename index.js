@@ -132,8 +132,6 @@ const pesquisa = (arrayObj, string) => {
         }
 }alert('Nenhum item foi encontrado!')
 }
-
-console.log(pesquisa(discos, 'Reasonable Doubt' ))
 // -------------------------------------------------------------------------------------------------------------------------------------------------
 
 // SEMANA 4:
@@ -151,16 +149,44 @@ discos[3].cover = './media/thecollegedropout.jpeg'
 //SEMANA 6:
 //Alterando o código para que a tela de lista de itens crie os elementos através da manipulação do DOM. E utilizando a função de busca criada para
 //fazer com que ao digitar um campo no input e apertar o botão, apenas os itens com nome igual ao da busca sejam renderizados na tela.
+const illmatic = document.getElementById('illmatic');
+const reasonableDoubt = document.getElementById('reasonableDoubt');
+const theEminemShow = document.getElementById('theEminemShow');
+const theCollegeDropout = document.getElementById('theCollegeDropout');
+const cardDiscos = document.getElementById('cardDiscos')
 
-function pesquisar(arrayObj, string){
-    const pesquisa = document.getElementById('pesquisa');
-    string = pesquisa.value
 
-    const cardDiscos = document.getElementById('cardDiscos');
+function pesquisar(){
+    const input = document.getElementById('albumInput');
+    let nomeDisco = input.value;
 
-    for(elemento of arrayObj){
-        if(elemento.nome === string){
-            return cardDiscos.innerHTML = elemento.html.innerHTML
-        }
-    }return alert("O disco não foi encontrado!")
+    for(elemento of discos){
+        console.log(elemento.nome, nomeDisco)
+        if(elemento.nome === nomeDisco){
+            console.log('achei')
+        }console.log('não achou')
+    } 
 }
+
+
+discos[0].link = "https://en.wikipedia.org/wiki/Illmatic"
+discos[1].link = 'https://en.wikipedia.org/wiki/Reasonable_Doubt_(album)'
+discos[2].link = "https://en.wikipedia.org/wiki/The_Eminem_Show"
+discos[3].link = "https://en.wikipedia.org/wiki/The_College_Dropout"
+
+function criaCard(obj){ 
+    return `<ul id=${obj.nome}>
+    <li><a href="https://en.wikipedia.org/wiki/Illmatic"><h2><b>${obj.nome}</b></h2></a></li>
+    <li><img src=${obj.cover} alt=${obj.nome} width="100px" height="100px"></li>
+    <li id="item1"><b>Artista:</b> ${obj.artista}</li>
+    <li id="item2"><b>Duração:</b> ${obj.duracao}</li>
+    <li id="item3"><b>Ano:</b> ${obj.ano}</li>
+    <li id="item4"><b>Tracklist:</b> ${obj.tracklist} </li><br>
+    <li id="item5"><b>Ganhou o Grammy?</b> ${obj.grammy}</li>
+</ul>`
+}
+
+for(disco of discos){
+    cardDiscos.insertAdjacentHTML('beforeend', criaCard(disco));
+}
+
