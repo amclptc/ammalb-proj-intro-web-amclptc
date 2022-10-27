@@ -38,7 +38,7 @@ section{
     height: auto;
     }
 
-#illmatic, #reasonableDoubt, #theEminemShow, #theCollegeDropout{
+#disco{
     text-align: center;
     background-color: red;
     margin: 20px;
@@ -48,8 +48,6 @@ section{
     width: 30vw;
     margin: 10px auto;
 }
-
-
 
 ul{
     list-style-type: none;
@@ -103,7 +101,7 @@ footer{
         height: auto;
         }
     
-    #illmatic, #reasonableDoubt, #theEminemShow, #theCollegeDropout{
+#disco{ 
         text-align: center;
         background-color: red;
         margin: 20px;
@@ -138,7 +136,7 @@ footer{
         height: auto;
         }
     
-    #illmatic, #reasonableDoubt, #theEminemShow, #theCollegeDropout{
+    #disco{
         text-align: center;
         background-color: red;
         margin: 20px;
@@ -148,4 +146,3 @@ footer{
         width: 90vw;
         margin: 10px auto;
     }
-    

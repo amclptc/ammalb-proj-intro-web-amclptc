@@ -156,27 +156,14 @@ const theCollegeDropout = document.getElementById('theCollegeDropout');
 const cardDiscos = document.getElementById('cardDiscos')
 
 
-function pesquisar(){
-    const input = document.getElementById('albumInput');
-    let nomeDisco = input.value;
-
-    for(elemento of discos){
-        console.log(elemento.nome, nomeDisco)
-        if(elemento.nome === nomeDisco){
-            console.log('achei')
-        }console.log('não achou')
-    } 
-}
-
-
 discos[0].link = "https://en.wikipedia.org/wiki/Illmatic"
 discos[1].link = 'https://en.wikipedia.org/wiki/Reasonable_Doubt_(album)'
 discos[2].link = "https://en.wikipedia.org/wiki/The_Eminem_Show"
 discos[3].link = "https://en.wikipedia.org/wiki/The_College_Dropout"
 
 function criaCard(obj){ 
-    return `<ul id=${obj.nome}>
-    <li><a href="https://en.wikipedia.org/wiki/Illmatic"><h2><b>${obj.nome}</b></h2></a></li>
+    return `<ul id=disco>
+    <li><a href="${obj.link}}"><h2><b>${obj.nome}</b></h2></a></li>
     <li><img src=${obj.cover} alt=${obj.nome} width="100px" height="100px"></li>
     <li id="item1"><b>Artista:</b> ${obj.artista}</li>
     <li id="item2"><b>Duração:</b> ${obj.duracao}</li>
@@ -186,7 +173,22 @@ function criaCard(obj){
 </ul>`
 }
 
-for(disco of discos){
-    cardDiscos.insertAdjacentHTML('beforeend', criaCard(disco));
-}
 
+// for(disco of discos){
+//     cardDiscos.insertAdjacentHTML('beforeend', criaCard(disco));
+// }
+
+function pesquisar(event){
+    const input = document.getElementById('albumInput');
+    let nomeDisco = input.value;
+
+    for(elemento of discos){
+        console.log(elemento.nome, nomeDisco)
+        if(elemento.nome === nomeDisco){
+            cardDiscos.insertAdjacentHTML('beforeend', criaCard(elemento));
+        }else{
+            console.log('Seu disco não foi encontrado! Procure por outro.');}
+        event.preventDefault()
+
+    }
+}
