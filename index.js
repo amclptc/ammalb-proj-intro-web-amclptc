@@ -23,7 +23,7 @@ const grammy3 = true;
 
 //Calculando a média entre os valores numbers, imprimindo o valor e guardando em uma const.
 const mediaDuracao = parseInt((duracao1 + duracao2 + duracao3) / 3);
-console.log(`\n\n MÉDIA ENTRE VALORES NUMÉRICOS: ${mediaDuracao}`);
+console.log(`\n MÉDIA ENTRE VALORES NUMÉRICOS: ${mediaDuracao}`);
 
 //Imprimindo resultado de uma operação lógica que checa se os booleanos são verdadeiros.
 const ganhouGrammy = (grammy1 && grammy2 && grammy3);
@@ -80,13 +80,13 @@ const ganhouGrammy2 = (disco) => {
 ganhouGrammy2(disco1)
 ganhouGrammy2(disco2)
 ganhouGrammy2(disco3)
-console.log('\n\n ARRAY DE OBJETOS COM VERIFICAÇÃO')
+console.log('\n\n ARRAY DE OBJETOS COM VERIFICAÇÃO SE ENCAIXA NO BOOLEANO')
 console.log(discosGrammy2)
 // -------------------------------------------------------------------------------------------------------------------------------------------------
 
 //SEMANA 3:
 //Não entendi essa parte, consegui o mesmo rsultado usando o jeito abaixo.
-console.log(`Disco 1: ${disco1.nome.toUpperCase()}\nArtista do Álbum: ${disco1.artista}\nDuração do Álbum: ${disco1.duracao}\nAno de Lançamento: ${disco1.ano}\nTracklist: ${disco1.tracklist.join(', ')}\nGanhou o Grammy?: ${disco1.grammy}`);
+console.log(`\n\nDisco 1: ${disco1.nome.toUpperCase()}\nArtista do Álbum: ${disco1.artista}\nDuração do Álbum: ${disco1.duracao}\nAno de Lançamento: ${disco1.ano}\nTracklist: ${disco1.tracklist.join(', ')}\nGanhou o Grammy?: ${disco1.grammy}`);
 console.log(`Disco 2: ${disco2.nome.toUpperCase()}\nArtista do Álbum: ${disco2.artista}\nDuração do Álbum: ${disco2.duracao}\nAno de Lançamento: ${disco2.ano}\nTracklist: ${disco2.tracklist.join(', ')}\nGanhou o Grammy?: ${disco2.grammy}`);
 console.log(`Disco 3: ${disco3.nome.toUpperCase()}\nArtista do Álbum: ${disco3.artista}\nDuração do Álbum: ${disco3.duracao}\nAno de Lançamento: ${disco3.ano}\nTracklist: ${disco3.tracklist.join(', ')}\nGanhou o Grammy?: ${disco3.grammy}`);
 
@@ -114,7 +114,7 @@ for(disco of discos){
 
 //Função que recebe um objeto e devolve uma string do relatório do objeto.
 const relatorio = (disco) => {
-    const stringRelatorio = (`Disco: ${disco.nome}, Artista: ${disco.artista}, Duração: ${disco.duracao}, Tracklist: ${disco.tracklist}, Ganhou o Grammy? ${disco.grammy}`)
+    const stringRelatorio = (`DISCO: ${disco.nome}\nARTISTA: ${disco.artista}\nDURAÇÃO: ${disco.duracao}\nTRACKLIST: ${disco.tracklist}\nGANHOU O GRAMMY? ${disco.grammy}`)
     console.log(stringRelatorio)
 }
 console.log(`\n\nRELATÓRIO GERADO PELA FUNÇÃO: `)
@@ -124,7 +124,6 @@ relatorio(disco3)
 relatorio(disco4)
 
 //Função que recebe array de objetos e uma string e retorna um objeto que possui os itens que tenham nome/título igual à string passada.
-console.log(`\n\nRESULTADO DA FUNÇÃO QUE RECBE OBJETOS E STRING:`)
 const pesquisa = (arrayObj, string) => {
     for(let i in arrayObj){
         if(arrayObj[i].nome.includes(string)){
@@ -132,6 +131,8 @@ const pesquisa = (arrayObj, string) => {
         }
 }alert('Nenhum item foi encontrado!')
 }
+
+
 // -------------------------------------------------------------------------------------------------------------------------------------------------
 
 // SEMANA 4:
@@ -162,8 +163,9 @@ discos[2].link = "https://en.wikipedia.org/wiki/The_Eminem_Show"
 discos[3].link = "https://en.wikipedia.org/wiki/The_College_Dropout"
 
 function criaCard(obj){ 
+    obj.nome = obj.nome.toUpperCase()
     return `<ul id=disco>
-    <li><a href="${obj.link}}"><h2><b>${obj.nome}</b></h2></a></li>
+    <li><a href="${obj.link}"><h2><b>${obj.nome}</b></h2></a></li>
     <li><img src=${obj.cover} alt=${obj.nome} width="100px" height="100px"></li>
     <li id="item1"><b>Artista:</b> ${obj.artista}</li>
     <li id="item2"><b>Duração:</b> ${obj.duracao}</li>
@@ -173,22 +175,30 @@ function criaCard(obj){
 </ul>`
 }
 
+const recarregaPagina = () =>{
+for(disco of discos){
+    cardDiscos.insertAdjacentHTML('beforeend', criaCard(disco));
+    
+}
+}
 
-// for(disco of discos){
-//     cardDiscos.insertAdjacentHTML('beforeend', criaCard(disco));
-// }
+recarregaPagina();
 
 function pesquisar(event){
     const input = document.getElementById('albumInput');
-    let nomeDisco = input.value;
-
+    let nomeDisco = input.value.toUpperCase();
+    
     for(elemento of discos){
         console.log(elemento.nome, nomeDisco)
         if(elemento.nome === nomeDisco){
-            cardDiscos.insertAdjacentHTML('beforeend', criaCard(elemento));
-        }else{
-            console.log('Seu disco não foi encontrado! Procure por outro.');}
-        event.preventDefault()
-
+            cardDiscos.innerHTML = criaCard(elemento);
+            event.preventDefault()
+            break;
+    }else{
+            alert('Seu disco não foi encontrado! Procure por outro.');
+            event.preventDefault()
+            break;
+        }
+        
     }
 }
